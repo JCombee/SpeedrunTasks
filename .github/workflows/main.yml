@@ -16,10 +16,8 @@ jobs:
         with:
           dotnet-version: 6.x
 
-      - name: Run the Cake script
-        uses: cake-build/cake-action@v1
-        with:
-          verbosity: Diagnostic
+      - name: Build
+        run: dotnet build SpeedrunTasks/SpeedrunTasks.csproj --configuration Release
 
       - uses: actions/upload-artifact@v2
         with:
